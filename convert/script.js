@@ -6,7 +6,8 @@ const GBP = 7.2
 const form = document.querySelector('form')
 const amount = document.getElementById('amount')
 const currency = document.getElementById('currency')
-const result = document.getElementById('result')
+const footer = document.querySelector('main footer')
+const description = document.getElementById('description')
 
 // Manipulando input amount para receber somente números
 amount.addEventListener('input', (event) => {
@@ -28,10 +29,18 @@ form.onsubmit = (event) => {
     case 'GBP':
       convertCurrency(amount.value, GBP, '£')
       break
-    case 'BRL':
-      convertCurrency(amount.value, 1, 'BRL')
   }
 
   //Função de conversão
-  function convertCurrency(amount, price, symbol) {}
+  function convertCurrency(amount, price, symbol) {
+    try {
+      description.textContent = `${symbol} 1 = ${price}`
+
+      // Exibindo o resultado
+      footer.classList.add('show-result')
+    } catch (error) {
+      footer.classList.remove('show-result')
+      console.log(error)
+    }
+  }
 }
