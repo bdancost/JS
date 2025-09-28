@@ -8,6 +8,7 @@ const amount = document.getElementById('amount')
 const currency = document.getElementById('currency')
 const footer = document.querySelector('main footer')
 const description = document.getElementById('description')
+const result = document.getElementById('result')
 
 // Manipulando input amount para receber somente números
 amount.addEventListener('input', (event) => {
@@ -34,7 +35,13 @@ form.onsubmit = (event) => {
   //Função de conversão
   function convertCurrency(amount, price, symbol) {
     try {
-      description.textContent = `${symbol} 1 = ${price}`
+      //Atualizando a cotação da moeda selecionada
+      description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
+
+      let total = amount * price
+
+      //Atualizando o resultado
+      result.textContent = formatCurrencyBRL(total)
 
       // Exibindo o resultado
       footer.classList.add('show-result')
@@ -42,5 +49,12 @@ form.onsubmit = (event) => {
       footer.classList.remove('show-result')
       console.log(error)
     }
+  }
+  // Formatando o valor para BRL
+  function formatCurrencyBRL(value) {
+    return Number(value).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    })
   }
 }
