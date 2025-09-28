@@ -37,10 +37,10 @@ form.onsubmit = (event) => {
     try {
       //Atualizando a cotação da moeda selecionada
       description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
-
+      // Calcula o total
       let total = amount * price
 
-      //Atualizando o resultado
+      //Atualizando o resultado total
       result.textContent = formatCurrencyBRL(total)
 
       // Exibindo o resultado
