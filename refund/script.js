@@ -1,4 +1,5 @@
 // Seleciona os elementos do formulário
+const form = document.querySelector('form')
 const amount = document.getElementById('amount')
 const expense = document.getElementById('expense')
 const category = document.getElementById('category')
@@ -19,5 +20,12 @@ function formatCurrencyBRL(value) {
   //Formata o valor no padrão BRL de moeda
   value = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 
+  // Retorna o valor formatado
   return value
+}
+
+// Captura o evento de submit do formulário
+form.onsubmit = (event) => {
+  // Previne o comportamento padrão do formulário
+  event.preventDefault()
 }
