@@ -42,5 +42,17 @@ form.onsubmit = (event) => {
       year: '2-digit',
     }), // Apenas para verificar se os dados estão corretos
   }
-  console.log(newExpense)
+  // Chama a função para adicionar a nova despesa
+  expenseAdd(newExpense)
+
+  // Reseta o formulário
+  form.reset()
+}
+
+function expenseAdd(newExpense) {
+  try {
+  } catch (error) {
+    alert('Não foi possível adicionar a despesa')
+    console.error(error)
+  }
 }
