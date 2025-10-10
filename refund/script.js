@@ -28,4 +28,19 @@ function formatCurrencyBRL(value) {
 form.onsubmit = (event) => {
   // Previne o comportamento padrão do formulário
   event.preventDefault()
+
+  // Cria um objeto com os dados da nova despesa
+  const newExpense = {
+    id: new Date().getTime(),
+    expense: expense.value,
+    category_id: category.value,
+    categoty_name: category.options[category.selectedIndex].text,
+    amount: amount.value,
+    created_at: new Date().toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit',
+    }), // Apenas para verificar se os dados estão corretos
+  }
+  console.log(newExpense)
 }
