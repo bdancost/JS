@@ -111,6 +111,14 @@ function updateTotals() {
 
     // Atualiza a quantidade de itens da lista
     expensesQuantity.textContent = `${itens.length} ${itens.length > 1 ? 'despesas' : 'despesa'}`
+
+    // Variavel para incrementar o total
+    let total = 0
+
+    // Percorre cada item (li) da lista (ul)
+    for (let item = 0; item < itens.length; i++) {
+      const itemAmount = itens[item].querySelector('.expense-amount')
+    }
   } catch (error) {
     console.error(error)
     alert('Não foi possível atualizar os totais')
