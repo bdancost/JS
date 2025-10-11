@@ -39,7 +39,7 @@ form.onsubmit = (event) => {
     id: new Date().getTime(),
     expense: expense.value,
     category_id: category.value,
-    categoty_name: category.options[category.selectedIndex].text,
+    category_name: category.options[category.selectedIndex].text,
     amount: amount.value,
     created_at: new Date().toLocaleDateString('pt-BR', {
       day: '2-digit',
@@ -64,7 +64,7 @@ function expenseAdd(newExpense) {
     // Cria o ícone da despesa
     const expenseIcon = document.createElement('img')
     expenseIcon.setAttribute('src', `./img/${newExpense.category_id}.svg`)
-    expenseIcon.setAttribute('alt', newExpense.categoty_name)
+    expenseIcon.setAttribute('alt', newExpense.category_name)
 
     // Cria o infor da despesa
     const expenseInfo = document.createElement('div')
@@ -76,7 +76,7 @@ function expenseAdd(newExpense) {
 
     // Cria a categoria da despesa
     const expenseCategory = document.createElement('span')
-    expenseCategory.textContent = newExpense.categoty_name
+    expenseCategory.textContent = newExpense.category_name
 
     // Adiciona o nome e a categoria na div de info das despesas
     expenseInfo.append(expenseName, expenseCategory)
@@ -108,33 +108,44 @@ function expenseAdd(newExpense) {
 function updateTotals() {
   try {
     // Recupera todos os itens (li) da lista (ul)
-    const itens = expenseList.children
+    const items = expenseList.children
 
     // Atualiza a quantidade de itens da lista
-    expensesQuantity.textContent = `${itens.length} ${itens.length > 1 ? 'despesas' : 'despesa'}`
+    expensesQuantity.textContent = `${items.length} ${items.length > 1 ? 'despesas' : 'despesa'}`
 
     // Variavel para incrementar o total
     let total = 0
 
     // Percorre cada item (li) da lista (ul)
-    for (let item = 0; item < itens.length; i++) {
-      const itemAmount = itens[item].querySelector('.expense-amount')
+    for (let item = 0; item < items.length; item++) {
+      const itemAmount = items[item].querySelector('.expense-amount')
 
       // Pega o valor do item, remove os caracteres não numéricos e substitui a vírgula por ponto
-      let value = itemAmount.textContent.replace(/[^\D]/g, '').replace(',', '.')
+      let value = itemAmount.textContent.replace(/[^\d,]/g, '').replace(',', '.')
 
       // Converte o valor para número e incrementa no total
       value = parseFloat(value)
 
       //Verifica se o valor é um número válido antes de adicionar ao total
-      if (!isNaN(value)) {
+      if (isNaN(value)) {
         return alert('Valor inválido encontrado em uma das despesas.')
       }
       // Incrementa o valor no total
       total += Number(value)
     }
 
-    expensesTotal.textContent = total
+    // Cria a span para adicionar o R$ formatado
+    const symbolBRL = document.createElement('small')
+    symbolBRL.textContent = 'R$'
+
+    // Formata o valor e remove o R$ que será exibido pela small com um estilo customizado
+    total = formatCurrencyBRL(total).toUpperCase().replace('R$', '')
+
+    // Limpa o conteúdo do elemento
+    expensesTotal.innerHTML = ''
+
+    // Adiciona o símbolo de R$ e o total formatado no elemento
+    expensesTotal.append(symbolBRL, total)
   } catch (error) {
     console.error(error)
     alert('Não foi possível atualizar os totais')
