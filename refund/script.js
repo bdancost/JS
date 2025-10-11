@@ -49,9 +49,6 @@ form.onsubmit = (event) => {
   }
   // Chama a função para adicionar a nova despesa
   expenseAdd(newExpense)
-
-  // Reseta o formulário
-  form.reset()
 }
 
 // Função para adicionar a nova despesa na lista
@@ -96,6 +93,10 @@ function expenseAdd(newExpense) {
     expenseItem.append(expenseIcon, expenseInfo, expenseAmount, removeIcon)
     // Adiciona o item na lista
     expenseList.append(expenseItem)
+
+    // Limpa o formulário para adicionar uma nova despesa
+    formClear()
+
     // Atualiza os totais
     updateTotals()
   } catch (error) {
@@ -162,3 +163,13 @@ expenseList.addEventListener('click', (event) => {
     updateTotals()
   }
 })
+
+function formClear() {
+  // Limpa os campos do formulário
+  expense.value = ''
+  category.value = ''
+  amount.value = ''
+
+  // Coloca o foco no campo de despesa
+  expense.focus()
+}
