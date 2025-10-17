@@ -6,14 +6,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet" />
 
     <link rel="icon" href="./src/assets/scissors.svg" />
-
-    <link rel="stylesheet" href="./src//styles/index.css" />
 
     <title>Hair Day</title>
   </head>
@@ -24,10 +19,7 @@
       <form class="form">
         <header>
           <h1>Agende um atendimento</h1>
-          <p>
-            Selecione data, horário e informe o nome do cliente para criar o
-            agendamento
-          </p>
+          <p>Selecione data, horário e informe o nome do cliente para criar o agendamento</p>
         </header>
 
         <label for="date" class="label">Data</label>
@@ -40,78 +32,30 @@
         <ul id="hours" class="hours" aria-label="Horários disponíveis de manhã">
           <!-- Exemplo: Manhã -->
           <li data-period="morning" class="hour-period">Manhã</li>
-          <li data-period="morning" value="09:00" class="hour hour-available">
-            09:00
-          </li>
-          <li data-period="morning" value="10:00" class="hour hour-available">
-            10:00
-          </li>
-          <li data-period="morning" value="11:00" class="hour hour-unavailable">
-            11:00
-          </li>
-          <li data-period="morning" value="12:00" class="hour hour-available">
-            12:00
-          </li>
+          <li data-period="morning" value="09:00" class="hour hour-available">09:00</li>
+          <li data-period="morning" value="10:00" class="hour hour-available">10:00</li>
+          <li data-period="morning" value="11:00" class="hour hour-unavailable">11:00</li>
+          <li data-period="morning" value="12:00" class="hour hour-available">12:00</li>
           <!-- Exemplo: Tarde  -->
           <li data-period="morning" class="hour-period">Tarde</li>
-          <li
-            data-period="afternoon"
-            value="13:00"
-            class="hour hour-unavailable"
-          >
-            13:00
-          </li>
-          <li
-            data-period="afternoon"
-            value="14:00"
-            class="hour hour-unavailable"
-          >
-            14:00
-          </li>
-          <li data-period="afternoon" value="15:00" class="hour hour-available">
-            15:00
-          </li>
-          <li
-            data-period="afternoon"
-            value="16:00"
-            class="hour hour-unavailable"
-          >
-            16:00
-          </li>
-          <li
-            data-period="afternoon"
-            value="17:00"
-            class="hour hour-unavailable"
-          >
-            17:00
-          </li>
-          <li data-period="afternoon" value="18:00" class="hour hour-available">
-            18:00
-          </li>
+          <li data-period="afternoon" value="13:00" class="hour hour-unavailable">13:00</li>
+          <li data-period="afternoon" value="14:00" class="hour hour-unavailable">14:00</li>
+          <li data-period="afternoon" value="15:00" class="hour hour-available">15:00</li>
+          <li data-period="afternoon" value="16:00" class="hour hour-unavailable">16:00</li>
+          <li data-period="afternoon" value="17:00" class="hour hour-unavailable">17:00</li>
+          <li data-period="afternoon" value="18:00" class="hour hour-available">18:00</li>
           <!-- Exemplo: Noite -->
           <li data-period="morning" class="hour-period">Noite</li>
 
-          <li data-period="night" value="19:00" class="hour hour-available">
-            19:00
-          </li>
-          <li data-period="night" value="20:00" class="hour hour-available">
-            20:00
-          </li>
-          <li data-period="night" value="21:00" class="hour hour-unavailable">
-            21:00
-          </li>
+          <li data-period="night" value="19:00" class="hour hour-available">19:00</li>
+          <li data-period="night" value="20:00" class="hour hour-available">20:00</li>
+          <li data-period="night" value="21:00" class="hour hour-unavailable">21:00</li>
         </ul>
 
         <label for="client" class="label">Cliente</label>
         <div class="input">
           <i><img src="./src/assets/person.svg" alt="Calendário" /></i>
-          <input
-            type="text"
-            id="client"
-            name="client"
-            placeholder="Nome do cliente"
-            required
-          />
+          <input type="text" id="client" name="client" placeholder="Nome do cliente" required />
         </div>
 
         <button type="submit" class="button">Agendar</button>
@@ -134,11 +78,7 @@
             <li>
               <strong>11:00</strong>
               <span>Rodrigo Gonçalves</span>
-              <img
-                src="./src/assets/cancel.svg"
-                alt="Cancelar"
-                class="cancel-icon"
-              />
+              <img src="./src/assets/cancel.svg" alt="Cancelar" class="cancel-icon" />
             </li>
           </ul>
         </section>
@@ -154,11 +94,7 @@
             <li>
               <strong>14:00</strong>
               <span>Rodrigo Gonçalves</span>
-              <img
-                src="./src/assets/cancel.svg"
-                alt="Cancelar"
-                class="cancel-icon"
-              />
+              <img src="./src/assets/cancel.svg" alt="Cancelar" class="cancel-icon" />
             </li>
           </ul>
         </section>
@@ -174,11 +110,7 @@
             <li>
               <strong>19:00</strong>
               <span>Rodrigo Gonçalves</span>
-              <img
-                src="./src/assets/cancel.svg"
-                alt="Cancelar"
-                class="cancel-icon"
-              />
+              <img src="./src/assets/cancel.svg" alt="Cancelar" class="cancel-icon" />
             </li>
           </ul>
         </section>
