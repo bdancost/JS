@@ -35,6 +35,8 @@ form.onsubmit = (event) => {
 
     //Gera um ID
     const id = new Date().getTime()
+
+    console.log({ id, name, when })
   } catch (error) {
     alert('Ops, algo deu errado!')
     console.log(error)
