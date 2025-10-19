@@ -27,8 +27,8 @@ export function schedulesShow({ dailySchedules }) {
       // Criar icone de cancelar o agendamento
       const cancelIcon = document.createElement('img')
       cancelIcon.classList.add('cancel-icon')
-      cancelIcon.setAttibute('src', './scr/assets/cancel.svg')
-      cancelIcon.setAttibute('alt', 'Cancelar agendamento')
+      cancelIcon.setAttribute('src', './src/assets/cancel.svg')
+      cancelIcon.setAttribute('alt', 'Cancelar agendamento')
 
       // Adiciona o tempo, nome e icone no item
       item.append(time, name, cancelIcon)
@@ -37,9 +37,9 @@ export function schedulesShow({ dailySchedules }) {
       const hour = dayjs(schedule.when).hour()
 
       // Renderiza o agendamento na sessão (manha, tarde ou noite)
-      if (hour >= 9 && hour < 13) {
+      if (hour <= 12) {
         periodMorning.appendChild(item)
-      } else if (hour >= 13 && hour < 19) {
+      } else if (hour > 12 && hour <= 18) {
         periodAfternoon.appendChild(item)
       } else {
         periodNight.appendChild(item)
