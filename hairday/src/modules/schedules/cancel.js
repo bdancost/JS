@@ -20,8 +20,6 @@ periods.forEach((period) => {
         if (isConfirm) {
           await scheduleCancel({ id })
 
-          item.remove()
-
           schedulesDay()
         }
       }
