@@ -1,19 +1,21 @@
-import { apiConfig } from './api-config'
+import { apiConfig } from './api-config.js'
 
-export async function scheduleNew({ id, name, when }) {
+export async function scheduleNew({ name, when }) {
   try {
-    // Faz a requisição para enviar os dados do agendamento
-    await fetch(`${apiConfig.baseURL}/schedules`, {
+    const response = await fetch(`${apiConfig.baseURL}/schedules`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ id, name, when }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, when }),
     })
 
-    alert('Agendamento realizado com sucesso!')
+    if (!response.ok) {
+      throw new Error('Erro ao criar agendamento')
+    }
+
+    const data = await response.json()
+    return data // retorna o agendamento com o ID verdadeiro
   } catch (error) {
     console.log(error)
-    alert('Não foi possível agendar. Tente mais tarde.')
+    alert('Não foi possível criar o agendamento.')
   }
 }

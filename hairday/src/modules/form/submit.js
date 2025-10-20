@@ -35,11 +35,8 @@ form.onsubmit = async (event) => {
     //Insere a hora na data
     const when = dayjs(selectedDate.value).add(hour, 'hour')
 
-    //Gera um ID
-    const id = new Date().getTime()
-
     // Faz o agendamento
-    await scheduleNew({ id, name, when })
+    await scheduleNew({ name, when })
 
     // Recarrega os agendamentos
     await schedulesDay()
