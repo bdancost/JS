@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Shop Agenda</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/agenda.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Cabeçalho -->
+      <header class="header">
+        <h1>Agenda Pet Shop</h1>
+        <button id="new-appointment-btn" class="button">Novo Agendamento</button>
+      </header>
+
+      <!-- Seleção de Data -->
+      <div class="date-picker">
+        <label for="date">Selecione a data:</label>
+        <input type="date" id="date" />
+      </div>
+
+      <!-- Agenda -->
+      <aside class="schedule">
+        <section class="schedule-period" id="period-morning">
+          <header>
+            <img src="./assets/morning.svg" alt="Manhã" />
+            <strong>Manhã</strong>
+            <span>09h-12h</span>
+          </header>
+          <ul class="appointments"></ul>
+        </section>
+
+        <section class="schedule-period" id="period-afternoon">
+          <header>
+            <img src="./assets/afternoon.svg" alt="Tarde" />
+            <strong>Tarde</strong>
+            <span>13h-18h</span>
+          </header>
+          <ul class="appointments"></ul>
+        </section>
+
+        <section class="schedule-period" id="period-night">
+          <header>
+            <img src="./assets/night.svg" alt="Noite" />
+            <strong>Noite</strong>
+            <span>19h-21h</span>
+          </header>
+          <ul class="appointments"></ul>
+        </section>
+      </aside>
+
+      <!-- Modal de Agendamento -->
+      <div id="appointment-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Novo Agendamento</h2>
+          <form id="appointment-form">
+            <label>Tutor</label>
+            <input type="text" id="tutor" required />
+
+            <label>Nome do Pet</label>
+            <input type="text" id="pet" required />
+
+            <label>Telefone</label>
+            <input type="tel" id="phone" required />
+
+            <label>Serviço</label>
+            <input type="text" id="service" required />
+
+            <label>Data</label>
+            <input type="date" id="appointment-date" required />
+
+            <label>Hora</label>
+            <select id="appointment-hour" required></select>
+
+            <button type="submit" class="button">Agendar</button>
+            <button type="button" id="close-modal" class="button cancel">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

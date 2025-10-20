@@ -1,0 +1,5 @@
+import './libs/dayjs.js'
+import './modules/modal.js'
+import './modules/form-handler.js'
+import './modules/appointments.js'
+import './modules/date-change.js'
