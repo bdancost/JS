@@ -4,7 +4,7 @@ import { hoursClick } from './hours-click.js'
 
 const hours = document.getElementById('hours')
 
-export function hoursLoad({ date, dailySchedules }) {
+export function hoursLoad({ date, dailySchedules = [] }) {
   //Limpa a lista de horários
   hours.innerHTML = ''
 
