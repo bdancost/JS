@@ -1,4 +1,5 @@
 import dayjs from '../libs/dayjs.js'
+import Swal from 'sweetalert2'
 
 let appointments = []
 
@@ -33,17 +34,32 @@ export function renderAppointments(date) {
 
 export function addAppointment(app) {
   const conflict = appointments.find((a) => a.date === app.date && a.hour === app.hour)
-  if (conflict) return alert('Já existe um agendamento nesse horário.')
+  if (conflict) return false // indica falha
 
   appointments.push(app)
   renderAppointments(app.date)
+  return true
 }
 
-document.addEventListener('click', (e) => {
+// Deletar agendamento
+document.addEventListener('click', async (e) => {
   if (e.target.classList.contains('delete-btn')) {
     const li = e.target.closest('li')
     const id = li.dataset.id
-    appointments = appointments.filter((a) => a.id != id)
-    li.remove()
+
+    const result = await Swal.fire({
+      title: 'Excluir agendamento?',
+      text: 'Essa ação não pode ser desfeita!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, excluir',
+      cancelButtonText: 'Cancelar',
+    })
+
+    if (result.isConfirmed) {
+      appointments = appointments.filter((a) => a.id !== id)
+      li.remove()
+      Swal.fire('Removido!', 'Agendamento excluído com sucesso.', 'success')
+    }
   }
 })
