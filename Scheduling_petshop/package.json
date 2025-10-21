@@ -1,5 +1,25 @@
 {
+  "name": "petshop-scheduler",
+  "version": "1.0.0",
+  "description": "Scheduling app for a pet shop",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "server": "json-server --watch server.json --port 3333",
+    "format": "prettier --write ."
+  },
   "dependencies": {
-    "dayjs": "^1.11.18"
+    "dayjs": "^1.11.18",
+    "micromodal": "^0.6.1",
+    "sweetalert2": "^11.26.3",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2"
   }
 }
