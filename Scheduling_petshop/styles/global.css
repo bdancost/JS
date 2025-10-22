@@ -13,9 +13,13 @@ body {
 
 .header {
   display: flex;
+  height: 250px;
+  background: #e84c3d;
+  color: white;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  padding: 10px;
+  margin-bottom: 2rem;
 }
 
 .button {
