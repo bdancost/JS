@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/agenda.css" />
+    <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" />
     <title>Pet Shop Agenda</title>
   </head>
@@ -23,10 +26,23 @@
 
     <div class="container"></div>
       <!-- Seleção de Data -->
-      <div class="date-picker">
-        <label for="date">Selecione a data:</label>
-        <input type="date" id="date" />
-      </div>
+      <form class="form">
+        <label for="date" class="label">Data</label>
+          <div class="input">
+            <i><img src="./src/assets/calendar.svg" alt="Calendário" /></i>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <span class="label">Horários</span>
+          <ul id="hours" class="hours" aria-label="Horários disponíveis de manhã">
+            <!-- Exemplo -->
+          </ul>
+          <label for="client" class="label">Cliente</label>
+          <div class="input">
+            <i><img src="./src/assets/person.svg" alt="Calendário" /></i>
+            <input type="text" id="client" name="client" placeholder="Nome do cliente" required />
+          </div>
+          <button type="submit" class="button">Agendar</button>
+      </form>
 
       <!-- Agenda -->
       <aside class="schedule">
