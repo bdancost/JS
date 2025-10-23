@@ -1,4 +1,5 @@
-import dayjs from 'dayjs'
+import dayjs from '../../libs/dayjs.js'
+
 import { apiConfig } from './api-config'
 
 export async function scheduleFetchByDay({ date }) {

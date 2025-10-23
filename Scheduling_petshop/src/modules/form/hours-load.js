@@ -1,4 +1,5 @@
-import dayjs from 'dayjs'
+import dayjs from '../../libs/dayjs.js'
+
 import { openingHours } from '../../utils/opening-hours.js'
 import { hoursClick } from './hours-click.js'
 

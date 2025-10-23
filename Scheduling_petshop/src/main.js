@@ -1,13 +1,19 @@
-import './libs/dayjs.js'
+'use strict'
 
-// Módulos
+import './libs/dayjs.js'
+import './libs/sweetalert.js'
+
+// Módulos do form
 import './modules/form/date-change.js'
+import './modules/form/submit.js'
+import './modules/form/hours-click.js'
+import './modules/form/hours-load.js'
+
 import './modules/schedules/cancel.js'
 import './modules/schedules/load.js'
-import './modules/form/submit.js'
-import { hoursLoad } from './modules/form/hours-load.js'
+import './modules/schedules/page-load.js'
+import './modules/schedules/show.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Carrega horários iniciais
-  hoursLoad({ date: new Date(), dailySchedules: [] })
+  console.log('🔥 JS carregado com sucesso!')
 })
