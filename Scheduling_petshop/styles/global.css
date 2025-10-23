@@ -1,7 +1,15 @@
-body {
-  font-family: 'Catamaran', sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 16px;
+}
+
+body {
   background: #f7f7f7;
 }
 
@@ -58,10 +66,14 @@ body {
   display: block;
 }
 
-.button.cancel {
-  background: #f44336;
+::-webkit-scrollbar {
+  width: 0.3rem;
 }
 
-.date-picker {
-  margin-bottom: 1rem;
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8952e;
 }

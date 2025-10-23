@@ -4,48 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/agenda.css" />
-    <link rel="stylesheet" href="styles/form.css">
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/schedules.css" />
+    <link rel="stylesheet" href="./styles/form.css" />
     <title>Pet Shop Agenda</title>
   </head>
   <body>
-    
     <!-- Cabeçalho -->
     <header class="header">
       <div class="header-content">
-        <h1>Seu pet merece cuidado, <br> carinho e atenção especial.</h1>
-        <p class="subtitle">Oferecemos os melhores serviços para garantir o bem-estar e a felicidade <br>do seu amigo de quatro patas.</p>
-        <button id="new-appointment-btn" class="button">Novo Agendamento</button>
+        <h1>
+          Seu pet merece cuidado, <br />
+          carinho e atenção especial.
+        </h1>
+        <p class="subtitle">
+          Oferecemos os melhores serviços para garantir o bem-estar e a felicidade <br />do seu
+          amigo de quatro patas.
+        </p>
+        <button id="open-modal" class="button">Novo Agendamento</button>
       </div>
       <img src="./src/assets/hero-dog.webp" alt="Pet" />
     </header>
 
-    <div class="container"></div>
+    <div class="container">
       <!-- Seleção de Data -->
       <form class="form">
         <label for="date" class="label">Data</label>
-          <div class="input">
-            <i><img src="./src/assets/calendar.svg" alt="Calendário" /></i>
-            <input type="date" id="date" name="date" required />
-          </div>
-          <span class="label">Horários</span>
-          <ul id="hours" class="hours" aria-label="Horários disponíveis de manhã">
-            <!-- Exemplo -->
-          </ul>
-          <label for="client" class="label">Cliente</label>
-          <div class="input">
-            <i><img src="./src/assets/person.svg" alt="Calendário" /></i>
-            <input type="text" id="client" name="client" placeholder="Nome do cliente" required />
-          </div>
-          <button type="submit" class="button">Agendar</button>
+        <div class="input">
+          <i><img src="./src/assets/calendar.svg" alt="Calendário" /></i>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <span class="label">Horários</span>
+        <ul id="hours" class="hours" aria-label="Horários disponíveis de manhã">
+          <!-- Exemplo -->
+        </ul>
+        <label for="client" class="label">Cliente</label>
+        <div class="input">
+          <i><img src="./src/assets/person.svg" alt="Calendário" /></i>
+          <input type="text" id="client" name="client" placeholder="Nome do cliente" required />
+        </div>
+        <button type="submit" class="button">Agendar</button>
       </form>
 
       <!-- Agenda -->
       <aside class="schedule">
+        <h1>Agendamentos</h1>
+        <p>Visualize os agendamentos de acordo com o dia selecionado</p>
+
         <section class="schedule-period" id="period-morning">
           <header>
             <img src="./src/assets/morning.svg" alt="Manhã" />
@@ -75,7 +85,7 @@
       </aside>
 
       <!-- Modal de Agendamento -->
-      <div id="appointment-modal" class="modal hidden">
+      <div id="" class="modal hidden">
         <div class="modal-content">
           <h2>Novo Agendamento</h2>
           <form id="appointment-form">
@@ -92,10 +102,10 @@
             <input type="text" id="service" required />
 
             <label>Data</label>
-            <input type="date" id="appointment-date" required />
+            <input type="date" id="" required />
 
             <label>Hora</label>
-            <select id="appointment-hour" required></select>
+            <select id="" required></select>
 
             <button type="submit" class="button">Agendar</button>
             <button type="button" id="close-modal" class="button cancel">Cancelar</button>
@@ -103,6 +113,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
