@@ -1,4 +1,4 @@
-import dayjs from '../../libs/dayjs.js'
+/* global dayjs */
 
 import { openingHours } from '../../utils/opening-hours.js'
 import { hoursClick } from './hours-click.js'

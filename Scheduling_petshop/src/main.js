@@ -1,8 +1,5 @@
 'use strict'
 
-import './libs/dayjs.js'
-import './libs/sweetalert.js'
-
 // Módulos do form
 import './modules/form/date-change.js'
 import './modules/form/submit.js'

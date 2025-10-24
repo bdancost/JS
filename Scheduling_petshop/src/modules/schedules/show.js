@@ -1,4 +1,4 @@
-import dayjs from '../../libs/dayjs.js'
+/* global dayjs */
 
 // Seleciona as sessões
 const periodMorning = document.getElementById('period-morning')

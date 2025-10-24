@@ -1,4 +1,4 @@
-import dayjs from '../../libs/dayjs.js'
+/* global dayjs */
 
 import { scheduleNew } from '../../services/schedules-new.js'
 import { schedulesDay } from '../schedules/load.js'
