@@ -38,6 +38,30 @@ select {
   object-fit: contain; /* mantém proporção */
 }
 
+.whatsapp-button {
+  display: inline-flex; /* Ícone + texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  color: white;
+  font-weight: 600;
+  text-decoration: none; /* Remove o sublinhado do link */
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebc5b; /* Efeito hover */
+}
+
+.whatsapp-button .icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1); /* Deixa o ícone branco */
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .schedule {
