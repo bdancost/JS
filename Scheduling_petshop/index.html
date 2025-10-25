@@ -34,6 +34,17 @@
     <div class="container">
       <!-- Seleção de Data -->
       <form class="form">
+        <div class="input">
+          <i><img src="./src/assets/person.svg" alt="Foto perfil" /></i>
+          <label for="client" class="label">Tutor</label>
+          <input type="text" id="client" name="client" required />
+        </div>
+        <div class="input">
+          <i><img src="./src/assets/dog-face.svg" alt="Foto de um dog" class="icon-dog" /></i>
+          <label for="client" class="label">Nome do Pet</label>
+          <input type="text" id="client" name="client" required />
+        </div>
+
         <label for="date" class="label">Data</label>
         <div class="input">
           <i><img src="./src/assets/calendar.svg" alt="Calendário" /></i>
@@ -43,11 +54,7 @@
         <ul id="hours" class="hours" aria-label="Horários disponíveis de manhã">
           <!-- Exemplo -->
         </ul>
-        <label for="client" class="label">Cliente</label>
-        <div class="input">
-          <i><img src="./src/assets/person.svg" alt="Calendário" /></i>
-          <input type="text" id="client" name="client" placeholder="Nome do cliente" required />
-        </div>
+
         <button type="submit" class="button">Agendar</button>
       </form>
 
@@ -89,12 +96,6 @@
         <div class="modal-content">
           <h2>Novo Agendamento</h2>
           <form id="appointment-form">
-            <label>Tutor</label>
-            <input type="text" id="tutor" required />
-
-            <label>Nome do Pet</label>
-            <input type="text" id="pet" required />
-
             <label>Telefone</label>
             <input type="tel" id="phone" required />
 
