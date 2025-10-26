@@ -13,11 +13,6 @@ body {
   background: #f7f7f7;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-}
-
 .header {
   display: flex;
   align-items: center; /* alinha verticalmente no centro */
@@ -76,4 +71,48 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #b8952e;
+}
+
+/* === LAYOUT LADO A LADO: FORM À DIREITA / AGENDAMENTOS À ESQUERDA === */
+.container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem; /* espaço entre os blocos */
+  padding: 0 2rem;
+}
+
+/* Agenda à esquerda */
+.schedule {
+  order: 2;
+  flex: 1;
+}
+
+/* Formulário à direita */
+.form {
+  order: 1;
+  flex: 1;
+}
+
+/* === CENTRALIZAR TEXTO DENTRO DOS INPUTS === */
+.input input,
+.input select,
+.input textarea {
+  text-align: center;
+}
+
+/* === RESPONSIVIDADE: EM TELAS PEQUENAS, FICA UM ABAIXO DO OUTRO === */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .schedule,
+  .form {
+    width: 100%;
+    max-width: 600px;
+  }
 }

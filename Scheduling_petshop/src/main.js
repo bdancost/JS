@@ -1,5 +1,8 @@
 'use strict'
 
+/* global dayjs */
+dayjs.locale('pt-br')
+
 // Módulos do form
 import './modules/form/date-change.js'
 import './modules/form/submit.js'

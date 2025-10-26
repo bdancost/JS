@@ -41,7 +41,7 @@
   font-family: 'Catamaran', sans-serif;
 
   font-size: 1rem;
-  color: #b2afb6;
+  color: black;
   background-color: transparent;
 
   outline: none;
@@ -102,7 +102,7 @@
 }
 
 .hour-available {
-  background-color: #2e2c30;
+  background-color: none;
 }
 
 .hour-unavailable {
@@ -119,6 +119,36 @@
 .hour:not(.hour-unavailable):hover {
   border: 1px solid #b8952e;
   color: #b8952e;
+}
+
+.icon-dog {
+  width: 20px; /* controla a largura */
+  height: 20px; /* controla a altura */
+  object-fit: contain; /* mantém proporção */
+}
+
+.whatsapp-button {
+  display: inline-flex; /* Ícone + texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  color: white;
+  font-weight: 600;
+  text-decoration: none; /* Remove o sublinhado do link */
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebc5b; /* Efeito hover */
+}
+
+.whatsapp-button .icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1); /* Deixa o ícone branco */
 }
 
 @media (max-width: 1100px) {
