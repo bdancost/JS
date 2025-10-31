@@ -81,6 +81,15 @@
   margin-right: 1.25rem;
 }
 
+/* Animação suave de remoção */
+.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
 @media (max-width: 1100px) {
   .schedule {
     grid-area: schedule;
