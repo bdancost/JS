@@ -1,5 +1,4 @@
 /* global dayjs */
-
 import { openingHours } from '../../utils/opening-hours.js'
 import { hoursClick } from './hours-click.js'
 
@@ -11,20 +10,28 @@ export function hoursLoad({ date, dailySchedules = [] }) {
   // Limpa horários anteriores
   hoursList.innerHTML = ''
 
-  const unavailableHours = dailySchedules.map((s) => dayjs(s.when).format('HH:mm'))
+  // Converter todos os horários ocupados para formato HH:mm
+  const unavailableHours = dailySchedules.map((s) => dayjs(new Date(s.when)).format('HH:mm'))
 
   openingHours.forEach((hour) => {
-    // Verifica se a hora já passou
     const [hourNumber] = hour.split(':')
-    const isPast = dayjs(date).hour(parseInt(hourNumber)).isBefore(dayjs())
 
+    // Cria uma data completa com a hora atual
+    const hourDate = dayjs(date).hour(parseInt(hourNumber)).minute(0).second(0)
+
+    // Verifica se o horário já passou (somente se for o dia de hoje)
+    const isToday = dayjs(date).isSame(dayjs(), 'day')
+    const isPast = isToday && hourDate.isBefore(dayjs())
+
+    // Verifica se o horário está disponível
     const available = !unavailableHours.includes(hour) && !isPast
 
+    // Cria o elemento <li>
     const li = document.createElement('li')
     li.classList.add('hour', available ? 'hour-available' : 'hour-unavailable')
     li.textContent = hour
 
-    // Adiciona título do período
+    // Adiciona títulos de período
     if (hour === '09:00') addPeriodHeader('Manhã')
     if (hour === '13:00') addPeriodHeader('Tarde')
     if (hour === '18:00') addPeriodHeader('Noite')
@@ -32,7 +39,7 @@ export function hoursLoad({ date, dailySchedules = [] }) {
     hoursList.appendChild(li)
   })
 
-  hoursClick() // Adiciona eventos de clique
+  hoursClick()
 }
 
 function addPeriodHeader(title) {
