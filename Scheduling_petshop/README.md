@@ -12,11 +12,39 @@ Aplicação web para agendamento de serviços em um pet shop. Projeto leve em Ja
 
 ## Tecnologias
 
-- JavaScript (ES Modules)
+## Tecnologias & Ferramentas
+
+<div align="left">
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" title="JavaScript">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" style="margin-right:12px; transition: transform .2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'"/>
+</a>
+
+<a href="https://day.js.org/" title="Dayjs">
+  <img src="https://raw.githubusercontent.com/iamkun/dayjs/dev/assets/logo.png" width="50" style="margin-right:12px; border-radius:6px; transition: transform .2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'"/>
+</a>
+
+<a href="https://github.com/typicode/json-server" title="json-server">
+  <img src="https://www.vectorlogo.zone/logos/json/json-icon.svg" width="50" style="margin-right:12px; transition: transform .2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'"/>
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" title="HTML5">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" width="50" style="margin-right:12px; transition: transform .2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'"/>
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS3">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" width="50" style="margin-right:12px; transition: transform .2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'"/>
+</a>
+
+</div>
+
+Tecnologias principais usadas neste projeto:
+
+- JavaScript (ES Modules puro)
 - dayjs (datas)
-- json-server (API de desenvolvimento)
-- HTML / CSS (sem frameworks)
-- Ferramentas: ESLint, Prettier
+- json-server (mock API)
+- HTML e CSS nativo
+- ESLint + Prettier
 
 ## Pré-requisitos
 
